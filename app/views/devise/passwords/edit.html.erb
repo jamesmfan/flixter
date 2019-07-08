@@ -1,5 +1,7 @@
+<br />
+<div class="booyah-box col-10 offset-1">
 <h2>Change your password</h2>
-
+<br />
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
@@ -17,8 +19,9 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Change my password" %>
+    <%= f.button :submit, "Change My Password", class: "btn-primary custom-btn" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
