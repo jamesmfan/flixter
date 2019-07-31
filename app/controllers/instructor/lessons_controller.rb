@@ -3,9 +3,8 @@ class Instructor::LessonsController < ApplicationController
   before_action :require_authorized_for_current_section, only: [:new, :create]
   before_action :require_authorized_for_current_lesson, only: [:update]
 
-  def new
-    @lesson = Lesson.new
-  end
+
+
 
   def create
     @lesson = current_section.lessons.create(lesson_params)
@@ -14,7 +13,7 @@ class Instructor::LessonsController < ApplicationController
 
   def update
     current_lesson.update_attributes(lesson_params)
-    render plain: 'Updated!'
+    render plain: 'updated!'
   end
 
   private
@@ -31,7 +30,7 @@ class Instructor::LessonsController < ApplicationController
 
   def require_authorized_for_current_section
     if current_section.course.user != current_user
-      return render plain: 'Unauthorized', status: :unauthorized
+      render plain: 'Unauthorized', status: :unauthorized
     end
   end
 
