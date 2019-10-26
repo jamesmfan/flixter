@@ -79,4 +79,5 @@ gem 'stripe'
 gem 'ranked-model'
 gem 'jquery-ui-rails'
 gem 'font-awesome-sass', '~> 5.9.0'
+gem 'devise'
 
